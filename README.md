@@ -9,6 +9,15 @@ Dieses Projekt untersucht die Vorhersage positiver und negativer Ausgleichsenerg
 - `fetch_additional_data.py` – Beispielskript zum Abruf weiterer Datenquellen (ENTSO-E, Wetter, Feiertage), die nun auch im Notebook verfügbar sind.
 - `train_with_additional.py` – Minimalbeispiel, das diese Zusatzdaten zusammenführt und im Modell verwendet.
 
+## Installation
+
+Die benötigten Bibliotheken können mit pip installiert werden:
+
+```bash
+pip install pandas requests openpyxl scikit-learn entsoe-py holidays
+```
+
+
 ## Nutzung
 
 1. Klonen oder herunterladen des Repositories.
