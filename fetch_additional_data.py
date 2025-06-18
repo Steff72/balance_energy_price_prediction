@@ -80,6 +80,7 @@ def fetch_holidays(start: datetime, end: datetime) -> pd.DataFrame:
     flags = [1 if day.date() in ch_holidays else 0 for day in idx]
     return pd.DataFrame({'holiday': flags}, index=idx)
 
+
 if __name__ == "__main__":
     start = datetime.utcnow() - timedelta(days=7)
     end = datetime.utcnow()
@@ -103,4 +104,5 @@ if __name__ == "__main__":
     data = data.join(holidays_df, how='left')
     data.to_csv('merged_data.csv')
     print("Merged data written to merged_data.csv")
+
 
