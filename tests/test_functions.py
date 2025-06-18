@@ -3,7 +3,12 @@ from pathlib import Path
 import pandas as pd
 import os
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from bepp import download_monthly_price, load_price_file, add_basic_features
+from bepp import (
+    download_monthly_price,
+    load_price_file,
+    add_basic_features,
+    merge_additional_data,
+)
 
 class DummyResponse:
     def __init__(self, content=b"data", status_code=200):
@@ -41,3 +46,15 @@ def test_add_basic_features():
     assert "hour" in enriched.columns
     assert enriched.loc[idx[1], "lag_price"] == 0
     assert enriched.loc[idx[24], "rolling_mean_24h"] == sum(range(1,25))/24
+
+def test_merge_additional_data():
+    price_idx = pd.date_range("2024-01-01", periods=4, freq="30min")
+    prices = pd.DataFrame({"PositivePrice": range(4)}, index=price_idx)
+    load_idx = pd.date_range("2024-01-01", periods=2, freq="H")
+    load = pd.DataFrame({"load": [10, 20]}, index=load_idx)
+    weather = pd.DataFrame({"temperature": [5, 6]}, index=load_idx)
+    holidays_df = pd.DataFrame({"holiday": [0, 1]}, index=load_idx)
+    merged = merge_additional_data(prices, load, weather, holidays_df)
+    assert "load" in merged.columns
+    assert "temperature" in merged.columns
+    assert "holiday" in merged.columns
