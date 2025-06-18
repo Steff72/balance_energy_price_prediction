@@ -5,15 +5,15 @@ Dieses Projekt untersucht die Vorhersage positiver und negativer Ausgleichsenerg
 ## Inhalt des Repositories
 
 - `LEITFADEN_AUSGLEICHSENERGIE.md` – Ausführliche Erläuterung der Datenquellen, möglicher Features und Modellierungsansätze.
-- `ausgleichsenergiepreisprognose.ipynb` – Notebook mit einem ersten Demonstrationscode zum Datenbezug und einem einfachen Basismodell.
-- `fetch_additional_data.py` – Beispielskript zum Abruf weiterer Datenquellen (ENTSO-E, Wetter, Feiertage).
+- `ausgleichsenergiepreisprognose.ipynb` – Notebook mit einem ersten Demonstrationscode zum Datenbezug, einem einfachen Basismodell und integrierten Funktionen für zusätzliche Datenquellen.
+- `fetch_additional_data.py` – Beispielskript zum Abruf weiterer Datenquellen (ENTSO-E, Wetter, Feiertage), die nun auch im Notebook verfügbar sind.
 
 ## Nutzung
 
 1. Klonen oder herunterladen des Repositories.
 2. Das Notebook `ausgleichsenergiepreisprognose.ipynb` in einer lokalen Jupyter-Umgebung öffnen.
 3. Die einzelnen Zellen nacheinander ausführen. Bei fehlender Internetverbindung werden Platzhalterdaten erzeugt.
-4. Optional kann `fetch_additional_data.py` ausgeführt werden, um weitere Daten zu laden und eine zusammengeführte CSV-Datei zu erzeugen.
+4. Optional kann `fetch_additional_data.py` separat ausgeführt werden, um dieselben Datenquellen abzurufen und eine zusammengeführte CSV-Datei zu erzeugen.
 
 Weitere Hinweise zu Datenquellen und Vorgehensweise finden sich im Leitfaden.
 
