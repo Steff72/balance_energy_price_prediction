@@ -5,8 +5,9 @@ Dieses Projekt untersucht die Vorhersage positiver und negativer Ausgleichsenerg
 ## Inhalt des Repositories
 
 - `LEITFADEN_AUSGLEICHSENERGIE.md` – Ausführliche Erläuterung der Datenquellen, möglicher Features und Modellierungsansätze.
-- `ausgleichsenergiepreisprognose.ipynb` – Notebook mit einem ersten Demonstrationscode zum Datenbezug, einem einfachen Basismodell und integrierten Funktionen für zusätzliche Datenquellen.
+- `ausgleichsenergiepreisprognose.ipynb` – Notebook mit einem ersten Demonstrationscode zum Datenbezug, einem einfachen Basismodell und integrierten Funktionen für zusätzliche Datenquellen. Die Zusatzdaten (Netzlast, Wetter und Feiertage) werden nun auch als Features im Modell genutzt.
 - `fetch_additional_data.py` – Beispielskript zum Abruf weiterer Datenquellen (ENTSO-E, Wetter, Feiertage), die nun auch im Notebook verfügbar sind.
+- `train_with_additional.py` – Minimalbeispiel, das diese Zusatzdaten zusammenführt und im Modell verwendet.
 
 ## Nutzung
 

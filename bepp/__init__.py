@@ -5,6 +5,7 @@ from .functions import (
     download_monthly_price,
     load_price_file,
     add_basic_features,
+    merge_additional_data,
 )
 
 __all__ = [
@@ -12,4 +13,5 @@ __all__ = [
     "download_monthly_price",
     "load_price_file",
     "add_basic_features",
+    "merge_additional_data",
 ]

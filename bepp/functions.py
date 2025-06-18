@@ -44,3 +44,19 @@ def add_basic_features(df: pd.DataFrame) -> pd.DataFrame:
     df['rolling_mean_24h'] = df['PositivePrice'].rolling(window=24).mean()
     df['rolling_std_24h'] = df['PositivePrice'].rolling(window=24).std()
     return df
+
+def merge_additional_data(
+    prices: pd.DataFrame,
+    load: pd.DataFrame | None = None,
+    weather: pd.DataFrame | None = None,
+    holidays: pd.DataFrame | None = None,
+) -> pd.DataFrame:
+    """Merge price data with optional load, weather and holiday information."""
+    df = prices.resample("H").mean()
+    if load is not None:
+        df = df.join(load, how="left")
+    if weather is not None:
+        df = df.join(weather, how="left")
+    if holidays is not None:
+        df = df.join(holidays, how="left")
+    return df
