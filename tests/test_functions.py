@@ -1,6 +1,8 @@
-import pandas as pd
+import sys
 from pathlib import Path
+import pandas as pd
 import os
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from bepp import download_monthly_price, load_price_file, add_basic_features
 
 class DummyResponse:
